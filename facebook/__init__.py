@@ -143,7 +143,7 @@ class GraphAPI(object):
                     "{0}/{1}/{2}".format(self.version, id, connection_name), args
                 )
                 return response
-            except GraphAPIError, ge:
+            except GraphAPIError as ge:
                 result = ge.result
                 error = result.get('error')
                 if error and error.get('code') == 2 and attempts < retry_count:
